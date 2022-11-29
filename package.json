@@ -1,0 +1,25 @@
+{
+  "name": "mano",
+  "version": "1.0.1",
+  "description": "JavaScript Animation library and css utility framework",
+  "main": "null",
+  "scripts": {
+    "test": "null"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nonso01/mano.git"
+  },
+  "keywords": [
+    "Anime",
+    "physics",
+    "calculus",
+    "algorithm"
+  ],
+  "author": "Nonso Martin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nonso01/mano/issues"
+  },
+  "homepage": "https://github.com/nonso01/mano#readme"
+}
