@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>play ground</title>
+</head>
+<body>
+
+<div class="m">
+  
+</div>
+
+
+<script type="module">
+  import {Anime} from "/lib_animation/Anime/Anime.js"
+const c=console
+
+let OBJ={
+  element:null,
+  type:{
+  }
+}
+
+const a= new Anime(OBJ)
+.on({
+  click(e){
+    e.target.style.background='#999'
+    setTimeout(()=>{
+      e.target.style.background='#222'
+    },500)
+  }
+})
+.css({
+  width: 200,
+  height: 300,
+  border: "1px solid"
+})
+
+  
+</script>
+</body>
+</html>
