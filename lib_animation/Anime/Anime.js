@@ -27,6 +27,9 @@
     this.start=false 
     // when initialized
       
+      _initializeCanvasIfPresent.call(this) // testing
+      
+      
     // Element data
     Anime.ATTRIBUTES= this.element.attributes
     Anime.PARENTNODE=this.element.parentNode
@@ -100,7 +103,7 @@ export {Anime}
       let _cnv= dc("canvas")
       _cnv.width= _W.innerHeight/2
       _cnv.height=_W.innerHeight/2
-      _cnv.style.backgroundColor="#000"
+      _cnv.style.border='1px solid'
       body.append(_cnv)
       this.element=dq("canvas")
       
@@ -115,6 +118,20 @@ export {Anime}
      this.element= dq(data.element)
    }
    return true
+ }
+ 
+ // testing out features
+ function _initializeCanvasIfPresent(){
+   if(this.element instanceof HTMLCanvasElement){
+     const _canvas= this.element
+     const _ctx= _canvas.getContext("2d")
+     
+          _ctx.fillStyle="#fca"
+     _ctx.fillRect(20,20,100,100)
+     
+     _ctx.fillRect(60,180,60,60)
+   }
+   else return 0
  }
 
 function _warningAboutChanges(){
