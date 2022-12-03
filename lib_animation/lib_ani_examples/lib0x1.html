@@ -18,24 +18,33 @@
 const c=console
 
 let OBJ={
-  element:null,
+  element:'.m',
   type:{
   }
 }
 
 const a= new Anime(OBJ)
 .on({
-  click(e){
+  pointerover(e){
+    e.preventDefault()
     e.target.style.background='#999'
     setTimeout(()=>{
       e.target.style.background='silver'
-    },500)
+    },200)
+  },
+  
+  click: function(){
+    c.log("clicked")
+  },
+  
+  mouseover:()=>{
+    c.log("mouse")
   }
 })
 .css({
-  width: 200,
+  width: 300,
   height: 300,
-  border: "1px solid"
+  border: "1px solid",
 })
   
 </script>

@@ -92,8 +92,6 @@
     
   }
  
-export {Anime}
-
 
  function _checkElementWithinData(data){
    let d= data.element
@@ -101,8 +99,8 @@ export {Anime}
     if(d===null){
     try{
       let _cnv= dc("canvas")
-      _cnv.width= _W.innerHeight/2
-      _cnv.height=_W.innerHeight/2
+      _cnv.width= _W.innerWidth
+      _cnv.height=_W.innerHeight
       _cnv.style.border='1px solid'
       body.append(_cnv)
       this.element=dq("canvas")
@@ -138,3 +136,4 @@ function _warningAboutChanges(){
    c.warn("Anime is still under developement\n\t By Nonso Martin and CO\n\v stay updated...")
  }
  
+export {Anime}
