@@ -1,6 +1,7 @@
-# A javaScript Animation Library and A Powerful CSS utility Framework
-____
-### Developer(s)
-- Nonso Marrin
- 
+# **MANO.js**
+___
 
+> mano.js is a compact JavaScript animation library along side a powerful and yet elegant CSS utility frameworks. 
+
+
+ - todo
