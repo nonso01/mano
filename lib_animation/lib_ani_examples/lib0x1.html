@@ -6,6 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>play ground</title>
 </head>
+
+<style>
+ 
+</style>
+
 <body>
 
 <div class="m">
@@ -17,13 +22,10 @@
   import {Anime} from "/lib_animation/Anime/Anime.js"
 const c=console
 
-let OBJ={
-  element:'.m',
-  type:{
-  }
-}
 
-const a= new Anime(OBJ)
+
+const test= new Anime({element:null})
+
 .on({
   pointerover(e){
     e.preventDefault()
@@ -41,12 +43,14 @@ const a= new Anime(OBJ)
     c.log("mouse")
   }
 })
-.css({
-  width: 300,
-  height: 300,
-  border: "1px solid",
-})
-  
+
+let a={
+  foo: 'foo',
+  bar: "bar",
+ // zoo: 'zoo'
+}
+
+ c.log(a.zoo?.toString() ?? a.bar)
 </script>
 </body>
 </html>

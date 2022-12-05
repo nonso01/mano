@@ -1,4 +1,8 @@
   'use strict'
+  
+  import {CanvasSample} from "/lib_animation/Anime/CanvasSample.js"
+
+  
   const [_W,_D]=[window,document]
 
   const c=console
@@ -9,7 +13,7 @@
   const html= dq("html")
   const body= dq("body")
   
-  class Anime{
+   class Anime{
     constructor(data={}){
       this.element
       this.nodeList
@@ -47,14 +51,16 @@
     }
     
     Anime.TYPE={
-      NAME: data.type.name || "reveal",
-      DELAY: data.type.delay || 0,
-      LOOP: data.type.loop || false,
-      RANDOM: Math.floor(Math.random()*data.type.random) || 0,
-      SPEED: data.type.speed || .05
+      NAME: data?.type?.name ?? "reveal",
+      DELAY: data?.type?.delay ?? 1,
+      LOOP: data?.type?.loop ?? false,
+      RANDOM: Math.floor(Math.random()*data?.type?.random) ?? 0,
+      SPEED: data?.type?.speed ?? .05
+      
+  // ?. optional chaining
     }
     
-    Anime.TWO_D=false
+    //Anime.TWO_D=false
     
     _warningAboutChanges()
   }
@@ -84,35 +90,36 @@
     
     init(){
     this.start = !this.start
-    c.log(Anime.TYPE)
+    c.log(Anime.BOXGEOMETRY)
     
     return this
     }
     
     
   }
- 
+
 
  function _checkElementWithinData(data){
-   let d= data.element
+   let d= data?.element
+   // nullish null or undefined
    
     if(d===null){
     try{
       let _cnv= dc("canvas")
       _cnv.width= _W.innerWidth
       _cnv.height=_W.innerHeight
-      _cnv.style.border='1px solid'
+      _cnv.style.border='5px solid'
       body.append(_cnv)
       this.element=dq("canvas")
       
-      Anime.TWO_D=true
+     // Anime.TWODIMENSION=true
     }
     catch(err){
       c.warn(err)
     }
  }
 
-   else if(data.element){
+   if(data.element){
      this.element= dq(data.element)
    }
    return true
@@ -124,9 +131,10 @@
      const _canvas= this.element
      const _ctx= _canvas.getContext("2d")
      
-          _ctx.fillStyle="#fca"
+       _ctx.fillStyle="#098"
      _ctx.fillRect(20,20,100,100)
      
+      _ctx.fillStyle="#008"
      _ctx.fillRect(60,180,60,60)
    }
    else return 0
@@ -136,4 +144,6 @@ function _warningAboutChanges(){
    c.warn("Anime is still under developement\n\t By Nonso Martin and CO\n\v stay updated...")
  }
  
+
 export {Anime}
+
