@@ -1,17 +1,12 @@
   'use strict'
   
-  import {CanvasSample} from "/lib_animation/Anime/CanvasSample.js"
-
   
   const [_W,_D]=[window,document]
 
   const c=console
-  const dq=x=>_D.querySelector(x)
-  const dqA=x=>_D.querySelectorAll(x)
-  const dc=x=>_D.createElement(x)
-  
   const html= dq("html")
   const body= dq("body")
+  
   
    class Anime{
     constructor(data={}){
@@ -60,8 +55,9 @@
   // ?. optional chaining
     }
     
-    //Anime.TWO_D=false
+    Anime.MSG=true
     
+    this.version="mano@1.0.1"
     _warningAboutChanges()
   }
     
@@ -140,10 +136,24 @@
    else return 0
  }
 
+
 function _warningAboutChanges(){
+  if(Anime.MSG){
    c.warn("Anime is still under developement\n\t By Nonso Martin and CO\n\v stay updated...")
  }
- 
+ else return null
+}
+function dq(x){
+  return _D.querySelector(x)
+}
+
+function dqA(x){
+  return _D.querySelectorAll(x)
+}
+
+function dc(x){
+  return _D.createElement(x)
+}
+
 
 export {Anime}
-
