@@ -8,7 +8,7 @@
   const body= dq("body")
   
   
-   class Anime{
+   class Mano{
     constructor(data={}){
       this.element
       this.nodeList
@@ -30,22 +30,22 @@
       
       
     // Element data
-    Anime.ATTRIBUTES= this.element.attributes
-    Anime.PARENTNODE=this.element.parentNode
+    Mano.ATTRIBUTES= this.element.attributes
+    Mano.PARENTNODE=this.element.parentNode
     
-    Anime.KEYS= Object.keys(data)
+    Mano.KEYS= Object.keys(data)
     
-    Anime.RECT= this.element.getBoundingClientRect()
-    Anime.BOXGEOMETRY={
-      w: Anime.RECT.width,
-      h: Anime.RECT.height,
-      x: Anime.RECT.x,
-      y: Anime.RECT.y,
-      t: Anime.RECT.top,
-      b: Anime.RECT.bottom
+    Mano.RECT= this.element.getBoundingClientRect()
+    Mano.BOXGEOMETRY={
+      w: Mano.RECT.width,
+      h: Mano.RECT.height,
+      x: Mano.RECT.x,
+      y: Mano.RECT.y,
+      t: Mano.RECT.top,
+      b: Mano.RECT.bottom
     }
     
-    Anime.TYPE={
+    Mano.TYPE={
       NAME: data?.type?.name ?? "reveal",
       DELAY: data?.type?.delay ?? 1,
       LOOP: data?.type?.loop ?? false,
@@ -55,7 +55,7 @@
   // ?. optional chaining
     }
     
-    Anime.MSG=true
+    Mano.MSG=true
     
     this.version="mano@1.0.1"
     _warningAboutChanges()
@@ -86,7 +86,7 @@
     
     init(){
     this.start = !this.start
-    c.log(Anime.BOXGEOMETRY)
+    c.log(Mano.BOXGEOMETRY)
     
     return this
     }
@@ -108,7 +108,7 @@
       body.append(_cnv)
       this.element=dq("canvas")
       
-     // Anime.TWODIMENSION=true
+     // Mano.TWODIMENSION=true
     }
     catch(err){
       c.warn(err)
@@ -138,8 +138,8 @@
 
 
 function _warningAboutChanges(){
-  if(Anime.MSG){
-   c.warn("Anime is still under developement\n\t By Nonso Martin and CO\n\v stay updated...")
+  if(Mano.MSG){
+   c.warn("Mano is still under developement\n\t By Nonso Martin and CO\n\v stay updated...")
  }
  else return null
 }
@@ -156,4 +156,4 @@ function dc(x){
 }
 
 
-export {Anime}
+export {Mano}

@@ -8,7 +8,11 @@
 </head>
 
 <style>
- 
+ * {
+   margin: 0;
+   padding: 0;
+  box-sizing:border-box;
+ }
 </style>
 
 <body>
@@ -19,12 +23,10 @@
 
 
 <script type="module">
-  import {Anime} from "/lib_animation/Anime/Anime.js"
+  import {Mano} from "/lib_animation/Mano/Mano.js"
+  
 const c=console
-
-
-
-const test= new Anime({element:null})
+const test= new Mano({element:null})
 
 .on({
   pointerover(e){
