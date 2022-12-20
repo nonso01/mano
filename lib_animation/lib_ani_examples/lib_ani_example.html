@@ -23,28 +23,14 @@
 
 
 <script type="module">
-  import {Mano} from "/lib_animation/Mano/Mano.js"
+  import {mano} from '/lib_animation/Mano/mano.prototype.js'
   
-const c=console
-const test= new Mano({element:null})
+const c = console
+let test = mano({
 
-.on({
-  pointerover(e){
-    e.preventDefault()
-    e.target.style.background='#999'
-    setTimeout(()=>{
-      e.target.style.background='silver'
-    },200)
-  },
-  
-  click: function(){
-    c.log("clicked")
-  },
-  
-  mouseover:()=>{
-    c.log("mouse")
-  }
 })
+
+c.log(test)
 
 </script>
 </body>

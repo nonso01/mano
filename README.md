@@ -7,3 +7,4 @@ ___
 
 
  - todo
+ - **Animation API** `Element.animate()`
