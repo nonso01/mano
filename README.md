@@ -1,2 +1,2 @@
-# mano
-style your web apps with less noise
+# Mano.rs
+`style your web apps with less noise``
