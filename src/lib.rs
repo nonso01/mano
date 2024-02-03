@@ -23,6 +23,12 @@ const VERSION: &str = "mano v0.1.0";
          fn display_help(&self) -> String;
      }
 
+     impl<S, E> DefaultOptions for CommandOptions<S, E> {
+         fn display_help(&self) -> String {
+             format!("{}", String::from("A short help message!"))
+         }
+     }
+
      pub fn cli() {}
  }
 
