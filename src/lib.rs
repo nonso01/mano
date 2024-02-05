@@ -5,7 +5,7 @@ const VERSION: &str = "mano v0.1.0";
  pub mod mano_cli {
      // use std::{self, collections::{HashMap}};
 
-     pub struct CommandOptions<S, E>  {
+     pub struct CommandLineOptions<S, E>  {
          // S: String , E: Bool
          pub help: S,
          pub version: S,
@@ -16,15 +16,15 @@ const VERSION: &str = "mano v0.1.0";
          pub update: E,
      }
 
-     pub struct CommandOptionStyle {
+     pub struct CommandLineOptionStyle {
          // using anstyle
      }
 
-     pub trait DefaultOptions {
+     pub trait CommandLineOperations {
          fn display_help(&self) -> String;
      }
 
-     impl<S, E> DefaultOptions for CommandOptions<S, E> {
+     impl<S, E> CommandLineOperations for CommandLineOptions<S, E> {
          fn display_help(&self) -> String {
              format!("{}", String::from("A short help message!"))
          }

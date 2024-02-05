@@ -1,8 +1,8 @@
 #![allow(dead_code)]
-use mano::mano_cli::{DefaultOptions, CommandOptions};
+use mano::mano_cli::{CommandLineOperations, CommandLineOptions};
 
 fn main() {
-    let a = CommandOptions {
+    let a = CommandLineOptions {
         help: String::from("help"),
         version: String::from("mano v0.1.0"),
         init: true,
