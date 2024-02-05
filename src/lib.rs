@@ -6,6 +6,7 @@ const VERSION: &str = "mano v0.1.0";
      // use std::{self, collections::{HashMap}};
 
      pub struct CommandOptions<S, E>  {
+         // S: String , E: Bool
          pub help: S,
          pub version: S,
          pub init: E,
