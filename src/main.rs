@@ -1,16 +1,7 @@
 #![allow(dead_code)]
-use mano::mano_cli::{CommandLineOperations, CommandLineOptions};
+use mano::mano_cli::{process_args};
 
 fn main() {
-    let a = CommandLineOptions {
-        help: String::from("help"),
-        version: String::from("mano v0.1.0"),
-        init: true,
-        minify: true,
-        clean: false,
-        watch: false,
-        update: true,
-    };
-
-    println!("{:#?}", a.display_help());
+    let a = process_args();
+    println!("you passed\n {:?}", a);
 }
