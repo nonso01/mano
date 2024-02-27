@@ -3,39 +3,19 @@ const VERSION: &str = "mano v0.1.0";
 
 /// The first task of this project will be the creation of a robust command line interface.
  pub mod mano_cli {
-     use std::{self, env};
+     use::clap::Parser;
 
-     pub struct CommandLineOptions  { // what about lifetimes ?
-         pub help: String,
-         pub version: String,
-         pub init: bool,
-         pub watch: bool,
-         pub minify: bool,
-         pub clean: bool,
-         pub update: bool,
+     #[derive(Parser, Debug)]
+     #[command(version, about, long_about = None)]
+
+     pub struct Args {
+         #[arg(short, long)]
+         name: String,
      }
 
-     pub struct CommandLineOptionStyle {
-         // using anstyle
-     }
+     pub fn cli() {
 
-     pub trait CommandLineOperations {
-         fn display_help(&self) -> String;
      }
-
-     impl CommandLineOperations for CommandLineOptions {
-         fn display_help(&self) -> String {
-             format!("{}", String::from("A short help message!"))
-         }
-     }
-
-     pub fn process_args() -> Vec<String> {
-         let mut _args: Vec<String> = env::args().collect();
-         dbg!(&mut _args);
-         _args
-     }
-
-     pub fn cli() {}
  }
 
 /// The second of this project will be the implementation of useful filesystem functions

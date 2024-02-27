@@ -1,7 +1,6 @@
 #![allow(dead_code)]
-use mano::mano_cli::{process_args};
+// use mano::;
 
 fn main() {
-    let a = process_args();
-    println!("you passed\n {:?}", a);
+    // let a = p
 }
