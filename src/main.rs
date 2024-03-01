@@ -1,6 +1,6 @@
 #![allow(dead_code)]
-// use mano::;
+use mano::mano_cli::cli;
 
 fn main() {
-    // let a = p
+    cli();
 }
