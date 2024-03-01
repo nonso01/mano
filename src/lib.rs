@@ -4,27 +4,11 @@ const VERSION: &str = "v0.1.0";
 /// The first task of this project will be the creation of a robust command line interface.
  pub mod mano_cli {
      use::clap::{Command, arg,};
-
-     // #[derive(Parser, Debug)]
-     // #[command(version, about, long_about = None)]
-     // pub struct Args {
-     //     #[arg(short, long)]
-     //     name: String,
-     //     
-     //     #[arg(short, long)]
-     //     watch: bool,
-     //
-     //     #[arg(short, long)]
-     //     init: bool,
-     //
-     //     #[arg(short, long)]
-     //     minify: bool,
-     //
-     //     #[arg(short, long)]
-     //     unused: bool,
-     // }
-
+     
      pub fn cli() {
+
+         // let display_styles =  
+        
          let _matches = Command::new("mano.rs")
              .author("Nonso Martin, https://github.com/nonso01")
              .version(env!("CARGO_PKG_VERSION"))
@@ -38,7 +22,7 @@ const VERSION: &str = "v0.1.0";
      }
  }
 
-/// The second of this project will be the implementation of useful filesystem functions
+/// The second task of this project will be the implementation of useful filesystem functions
  pub mod mano_fs {
      pub fn create() {}
 
