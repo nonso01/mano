@@ -9,3 +9,5 @@
 > As time unfolds, new contents and ideas will be released.
 
 > `dev branch`
+
+- to format code according to rust format use `cargo fmt`
