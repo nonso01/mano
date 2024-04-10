@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 const VERSION: &str = "v0.1.0";
 
-/// The first task of this project will be the creation of a robust command line interface.
+// The first task of this project will be the creation of a robust command line interface.
 #[allow(unused_imports)]
 pub mod mano_cli {
     use ::clap::{
@@ -17,16 +17,17 @@ pub mod mano_cli {
             .literal(AnsiColor::Cyan.on_default());
 
         let _cmd = Command::new("mano.rs")
-             .author("Nonso Martin, https://github.com/nonso01")
+             .author("Nonso Martin")
              .version(env!("CARGO_PKG_VERSION"))
              .about("\tmano.rs is a standalone software crafted for generating css styles on the go!,\
                     \n\tbuilt with rust for more efficiency and productivity.")
              .args([
-                   arg!(-w --watch "watches the target file(s) for changes"),
-                   arg!(-m --minify "minifies the output file(s)"),
-                   arg!(-i --init "creates a json file with specified settings"),
-                   arg!(-u --unused "clean up unsued variables and style declarations"),
-                   arg!(-s --screen <NEWTAB> "open a new browser tab, to display all the activities going on,\n on the current working session")
+                   arg!(-w --watch "Watches the target file(s) for changes"),
+                   arg!(-m --minify "Minifies the output file(s)"),
+                   arg!(-i --init "Creates a json file with specified settings"),
+                   arg!(-u --unused "Clean up unsued variables and style declarations"),
+                   arg!(-s --search "Search for base or default styles"),
+                   arg!(-t --tab "Opens a new browser window, displaying all curreent activities")
                   ])
              .styles(display_styles)
              .arg_required_else_help(true) // exp
@@ -35,17 +36,4 @@ pub mod mano_cli {
     }
 }
 
-/// The second task of this project will be the implementation of useful filesystem functions
-pub mod mano_fs {
-    pub fn create() {}
-
-    pub fn create_dir() {}
-
-    pub fn read() {}
-
-    pub fn read_dir() {}
-
-    pub fn write() {}
-
-    pub fn delete() {}
-}
+// The second task of this project will be the implementation of useful filesystem functions
