@@ -16,7 +16,7 @@ pub mod mano_cli {
             .usage(AnsiColor::Blue.on_default())
             .literal(AnsiColor::Cyan.on_default());
 
-        let _cmd = Command::new("mano.rs")
+        let _matches = Command::new("mano.rs")
              .author("Nonso Martin")
              .version(env!("CARGO_PKG_VERSION"))
              .about("\tmano.rs is a standalone software crafted for generating css styles on the go!,\
