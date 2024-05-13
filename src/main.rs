@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-use mano::mano_cli::cli;
+use mano::cli;
 
 fn main() {
     cli();
