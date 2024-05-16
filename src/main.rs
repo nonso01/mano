@@ -1,7 +1,8 @@
 #![allow(dead_code)]
 use mano::{cli, CommandOptions};
 
-const CONFIG_FILLE: &str = "mano.config.json";
+const VERSION: &str = "Mano v0.1.0";
+const CONFIG_FILE: &str = "mano.config.json";
 
 fn main() {
     // (1) work on the command line
@@ -20,5 +21,5 @@ fn main() {
         },
     };
 
-    println!("{:#?}", _cmd);
+    println!("{:#?}", _cmd_options);
 }
