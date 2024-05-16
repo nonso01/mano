@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-const VERSION: &str = "v0.1.0";
 
 // (1) The first task of this project,
 // will be the creation of a robust command line interface.
@@ -10,6 +9,18 @@ use ::clap::{
     builder::{styling::AnsiColor, Styles},
     value_parser, Arg, ArgAction, ArgMatches, Command,
 };
+
+#[derive(Debug)]
+pub struct CommandOptions<B /* bool */, V /* Vec */> {
+    pub watch: B,
+    pub init: B,
+    pub minify: B,
+    pub unused: B,
+    pub browser: B,
+    pub search: V,
+}
+
+impl<B, V> CommandOptions<B, V> {}
 
 pub fn cli() -> ArgMatches {
     let about_crate = String::from("Mano is a powerful and blazing-fast utility-first css generation library\nwritten in Rust, it offers significant enhancement in performance, flexibility and feature set.");
@@ -24,19 +35,19 @@ pub fn cli() -> ArgMatches {
         .version(env!("CARGO_PKG_VERSION"))
         .about(&about_crate)
         .args([
-            arg!(-w --watch "Watches the target file(s) for changes")
-                .value_parser(value_parser!(bool)),
+            arg!(-w --watch "Watches the target file(s) for changes"),
             arg!(-m --minify "Minifies the output file(s)"),
             arg!(-i --init "Creates a json file with specific settings"),
             arg!(-u --unused "Clean up unsued variables and style declarations"),
             Arg::new("search")
                 .short('s')
                 .long("search")
+                .value_parser(value_parser!(String))
                 .action(ArgAction::Set)
                 .value_delimiter(',')
-                .num_args(1..5)
+                .num_args(1..3)
                 .help("Searches the program for utility classes, fonts, colors, and more"),
-            arg!(-t --tab "Opens a new browser window, displaying all current activities"),
+            arg!(-b --browser "Opens a new browser window, displaying all current activities"),
         ])
         .styles(display_styles)
         .arg_required_else_help(true) // exp
