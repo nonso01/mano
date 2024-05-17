@@ -11,16 +11,16 @@ use ::clap::{
 };
 
 #[derive(Debug)]
-pub struct CommandOptions<B /* bool */, V /* Vec */> {
+pub struct CommandOptions<B /* bool */, A /* Array */> {
     pub watch: B,
     pub init: B,
     pub minify: B,
     pub unused: B,
     pub browser: B,
-    pub search: V,
+    pub search: A,
 }
 
-impl<B, V> CommandOptions<B, V> {}
+impl<B, A> CommandOptions<B, A> {}
 
 pub fn cli() -> ArgMatches {
     let about_crate = String::from("Mano is a powerful and blazing-fast utility-first css generation library\nwritten in Rust, it offers significant enhancement in performance, flexibility and feature set.");
