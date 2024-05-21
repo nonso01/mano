@@ -16,7 +16,7 @@ pub struct CommandOptions<B /* bool */, A /* Array */> {
     pub init: B,
     pub minify: B,
     pub unused: B,
-    pub browser: B,
+    pub dev: B,
     pub search: A,
 }
 
@@ -47,7 +47,7 @@ pub fn cli() -> ArgMatches {
                 .value_delimiter(',')
                 .num_args(1..3)
                 .help("Searches the program for utility classes, fonts, colors, and more"),
-            arg!(-b --browser "Opens a new browser window, displaying all current activities"),
+            arg!(-d --dev "Opens a new browser window, displaying all current activities"),
         ])
         .styles(display_styles)
         .arg_required_else_help(true) // exp

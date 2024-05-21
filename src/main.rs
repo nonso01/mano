@@ -13,7 +13,7 @@ fn main() {
         minify: cmd.get_one::<bool>("minify").unwrap(),
         init: cmd.get_one::<bool>("init").unwrap(),
         unused: cmd.get_one::<bool>("unused").unwrap(),
-        browser: cmd.get_one::<bool>("browser").unwrap(),
+        dev: cmd.get_one::<bool>("dev").unwrap(),
         search: match cmd.get_one::<String>("search") {
             /* we need an Array */
             Some(query) => query,
