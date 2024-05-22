@@ -10,6 +10,8 @@ use ::clap::{
     value_parser, Arg, ArgAction, ArgMatches, Command,
 };
 
+pub const SEARCH_PARAM: [&str; 5] = ["fonts", "text", "grid", "flex", "colors"];
+
 #[derive(Debug)]
 pub struct CommandOptions<B /* bool */, A /* Array */> {
     pub watch: B,
@@ -42,11 +44,9 @@ pub fn cli() -> ArgMatches {
             Arg::new("search")
                 .short('s')
                 .long("search")
-                .value_parser(value_parser!(String))
+                .value_parser(*&SEARCH_PARAM)
                 .action(ArgAction::Set)
-                .value_delimiter(',')
-                .num_args(1..3)
-                .help("Searches the program for utility classes, fonts, colors, and more"),
+                .help("Searches the program core utilities like"),
             arg!(-d --dev "Opens a new browser window, displaying all current activities"),
         ])
         .styles(display_styles)

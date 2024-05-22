@@ -10,12 +10,11 @@ fn main() {
 
     let cmd_options = CommandOptions {
         watch: cmd.get_one::<bool>("watch").unwrap(),
-        minify: cmd.get_one::<bool>("minify").unwrap(),
-        init: cmd.get_one::<bool>("init").unwrap(),
-        unused: cmd.get_one::<bool>("unused").unwrap(),
-        dev: cmd.get_one::<bool>("dev").unwrap(),
+        minify: cmd.get_one("minify").unwrap(),
+        init: cmd.get_one("init").unwrap(),
+        unused: cmd.get_one("unused").unwrap(),
+        dev: cmd.get_one("dev").unwrap(),
         search: match cmd.get_one::<String>("search") {
-            /* we need an Array */
             Some(query) => query,
             None => "NO QUERY",
         },
