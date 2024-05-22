@@ -15,7 +15,7 @@ pub const ABOUT_CRATE: &str = "Mano is a powerful and blazing-fast utility-first
 pub const SEARCH_PARAM: [&str; 5] = ["fonts", "text", "grid", "flex", "colors"];
 
 #[derive(Debug)]
-pub struct CommandOptions<B /* bool */, A /* Array */> {
+pub struct CommandOptions<B /* bool */, A /* String */> {
     pub watch: B,
     pub init: B,
     pub minify: B,
@@ -41,12 +41,9 @@ pub fn cli() -> ArgMatches {
             arg!(-m --minify "Minifies the output file(s)"),
             arg!(-i --init "Creates a json file with specific settings"),
             arg!(-u --unused "Clean up unsued variables and style declarations"),
-            Arg::new("search")
-                .short('s')
-                .long("search")
+            arg!(-s --search "Searches the program for core features")
                 .value_parser(*&SEARCH_PARAM)
-                .action(ArgAction::Set)
-                .help("Searches the program core utilities like"),
+                .action(ArgAction::Set),
             arg!(-d --dev "Opens a new browser window, displaying all current activities"),
         ])
         .styles(display_styles)
