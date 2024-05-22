@@ -10,6 +10,8 @@ use ::clap::{
     value_parser, Arg, ArgAction, ArgMatches, Command,
 };
 
+pub const ABOUT_CRATE: &str = "Mano is a powerful and blazing-fast utility-first css generation library\nwritten in Rust, it offers significant enhancement in performance, flexibility and feature set.";
+
 pub const SEARCH_PARAM: [&str; 5] = ["fonts", "text", "grid", "flex", "colors"];
 
 #[derive(Debug)]
@@ -25,8 +27,6 @@ pub struct CommandOptions<B /* bool */, A /* Array */> {
 impl<B, A> CommandOptions<B, A> {}
 
 pub fn cli() -> ArgMatches {
-    let about_crate = String::from("Mano is a powerful and blazing-fast utility-first css generation library\nwritten in Rust, it offers significant enhancement in performance, flexibility and feature set.");
-
     let display_styles = Styles::styled()
         .header(AnsiColor::Yellow.on_default())
         .usage(AnsiColor::Blue.on_default())
@@ -35,7 +35,7 @@ pub fn cli() -> ArgMatches {
     let matches = Command::new("mano")
         .author("Nonso Martin")
         .version(env!("CARGO_PKG_VERSION"))
-        .about(&about_crate)
+        .about(ABOUT_CRATE)
         .args([
             arg!(-w --watch "Watches the target file(s) for changes"),
             arg!(-m --minify "Minifies the output file(s)"),

@@ -9,7 +9,7 @@ fn main() {
     let cmd = cli();
 
     let cmd_options = CommandOptions {
-        watch: cmd.get_one::<bool>("watch").unwrap(),
+        watch: cmd.get_one("watch").unwrap(),
         minify: cmd.get_one("minify").unwrap(),
         init: cmd.get_one("init").unwrap(),
         unused: cmd.get_one("unused").unwrap(),
