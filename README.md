@@ -10,4 +10,10 @@
 
 > `dev branch`
 
-- to format code according to rust format use `cargo fmt`
+- to format code use `cargo fmt`
+### import and export
+```rs 
+use crate::your_file::your_obj;
+pub mod your_file;
+
+```
