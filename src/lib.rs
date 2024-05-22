@@ -6,7 +6,10 @@
 #[allow(unused_imports)]
 use ::clap::{
     arg,
-    builder::{styling::AnsiColor, Styles},
+    builder::{
+        styling::{self, AnsiColor},
+        Styles,
+    },
     value_parser, Arg, ArgAction, ArgMatches, Command,
 };
 
@@ -28,9 +31,11 @@ impl<B, A> CommandOptions<B, A> {}
 
 pub fn cli() -> ArgMatches {
     let display_styles = Styles::styled()
-        .header(AnsiColor::Yellow.on_default())
-        .usage(AnsiColor::Blue.on_default())
-        .literal(AnsiColor::Cyan.on_default());
+        .header(
+            AnsiColor::Yellow.on_default() | styling::Effects::BOLD | styling::Effects::UNDERLINE,
+        )
+        .usage(AnsiColor::Blue.on_default() | styling::Effects::BOLD)
+        .literal(AnsiColor::Cyan.on_default() | styling::Effects::BOLD);
 
     let matches = Command::new("mano")
         .author("Nonso Martin")
