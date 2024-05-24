@@ -40,7 +40,7 @@ pub fn cli() -> ArgMatches {
     let matches = Command::new("mano")
         .author("Nonso Martin")
         .version(env!("CARGO_PKG_VERSION"))
-        .about(ABOUT_CRATE)
+        .about(&ABOUT_CRATE)
         .args([
             arg!(-w --watch "Watches the target file(s) for changes"),
             arg!(-m --minify "Minifies the output file(s)"),

@@ -3,7 +3,6 @@ use crate::matches::{cli, CommandOptions};
 
 pub mod matches;
 
-const VERSION: &str = "Mano v0.1.0";
 const CONFIG_FILE: &str = "mano.config.json";
 
 fn main() {
