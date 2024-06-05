@@ -1,6 +1,10 @@
 #![allow(dead_code)]
+#![allow(unused_imports)]
+
+use crate::csssd::CSSStyleDeclaration;
 use crate::matches::{cli, CommandOptions};
 
+pub mod csssd;
 pub mod matches;
 
 const CONFIG_FILE: &str = "mano.config.json";

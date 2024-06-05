@@ -1,4 +1,49 @@
 #[derive(Debug)]
-pub struct CSSStyleDeclaration {
+pub enum Auto {}
+#[derive(Debug)]
+pub enum Todo {}
 
+#[derive(Debug)]
+pub struct CSSStyleDeclaration {
+    pub accent_color: Auto,
+    pub additive_symbols: Todo,
+    pub align_content: Todo,
+    pub align_items: Todo,
+    pub align_self: Todo,
+    pub alignment_baseline: Todo,
+    pub all: Todo,
+    pub animation: Todo,
+    pub animation_composition: Todo,
+    pub animation_delay: Todo,
+    pub animation_direction: Todo,
+    pub animation_fill_mode: Todo,
+    pub animation_iteration_count: Todo,
+    pub animation_name: Todo,
+    pub animation_play_state: Todo,
+    pub animation_range: Todo,
+    pub animation_range_end: Todo,
+    pub animation_range_start: Todo,
+    pub animation_timeline: Todo,
+    pub animation_timing_function: Todo,
+    pub app_range: Todo,
+    pub appearance: Todo,
+    pub ascent_color: Todo,
+    pub backdrop_filter: Todo,
+    pub backface_visibility: Todo,
+    pub background: Todo,
+    pub background_attachement: Todo,
+    pub background_blend_mode: Todo,
+    pub background_clip: Todo,
+    pub background_color: Todo,
+    pub background_image: Todo,
+    pub background_origin: Todo,
+    pub background_position: Todo,
+    pub background_position_x: Todo,
+    pub background_position_y: Todo,
+    pub background_repeat: Todo,
+    pub background_size: Todo,
+    pub base_pallete: Todo,
+    pub baseline_shift: Todo,
+    pub baseline_source: Todo,
+    pub block_size: Todo,
 }
