@@ -1,11 +1,27 @@
 #[derive(Debug)]
 pub enum Auto {}
+
+#[derive(Debug)]
+pub enum Color {
+    AUTO(Auto),
+    RGB(i8, i8, i8),
+    RGBA(i8, i8, i8, i8),
+    HSL(i8, i8, i8, i8),
+    HSLA(i8, i8, i8, i8),
+}
+
+#[derive(Debug)]
+pub enum Size {
+    PX(isize),
+    REM(isize),
+    OTHERS(Todo),
+}
 #[derive(Debug)]
 pub enum Todo {}
 
 #[derive(Debug)]
 pub struct CSSStyleDeclaration {
-    pub accent_color: Auto,
+    pub accent_color: Color,
     pub additive_symbols: Todo,
     pub align_content: Todo,
     pub align_items: Todo,
@@ -27,14 +43,14 @@ pub struct CSSStyleDeclaration {
     pub animation_timing_function: Todo,
     pub app_range: Todo,
     pub appearance: Todo,
-    pub ascent_color: Todo,
+    pub ascent_override: Todo,
     pub backdrop_filter: Todo,
     pub backface_visibility: Todo,
     pub background: Todo,
     pub background_attachement: Todo,
     pub background_blend_mode: Todo,
     pub background_clip: Todo,
-    pub background_color: Todo,
+    pub background_color: Color,
     pub background_image: Todo,
     pub background_origin: Todo,
     pub background_position: Todo,
@@ -46,4 +62,50 @@ pub struct CSSStyleDeclaration {
     pub baseline_shift: Todo,
     pub baseline_source: Todo,
     pub block_size: Todo,
+    pub border: Todo,
+    pub border_block: Todo,
+    pub border_block_color: Todo,
+    pub border_block_end: Todo,
+    pub border_block_end_color: Todo,
+    pub border_block_end_style: Todo,
+    pub border_block_end_width: Todo,
+    pub border_block_style: Todo,
+    pub border_block_width: Todo,
+    pub border_bottom: Todo,
+    pub border_bottom_color: Color,
+    pub border_bottom_left_radius: Size,
+    pub border_bottom_style: Todo,
+    pub border_bottom_width: Todo,
+    pub border_collapse: Todo,
+    pub border_color: Todo,
+    pub border_end_end_radius: Size,
+    pub border_end_start_radius: Size,
+    pub border_image: Todo,
+    pub border_image_source: Todo,
+    pub border_image_width: Todo,
+    pub border_inline: Todo,
+    pub border_inline_color: Color,
+    pub border_inline_end: Todo,
+    pub border_inline_end_color: Color,
+    pub border_inline_end_style: Todo,
+    pub border_inline_end_width: Size,
+    pub border_inline_start: Todo,
+    pub border_inline_start_color: Color,
+    pub border_inline_start_style: Todo,
+    pub border_inline_start_width: Size,
+    pub border_inline_style: Todo,
+    pub border_inline_width: Size,
+    pub border_left: Todo,
+    pub border_left_color: Color,
+    pub border_left_style: Todo,
+    pub border_left_width: Size,
+    pub border_radius: Size,
+    pub border_right: Todo,
+    pub border_right_color: Color,
+    pub border_right_style: Todo,
+    pub border_right_width: Size,
+    pub border_spacing: Size,
+    pub border_start_end_radius: Size,
+    pub border_start_start_radius: Size,
+    pub border_style: Todo,
 }
